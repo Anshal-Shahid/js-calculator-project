@@ -160,8 +160,7 @@ minus.addEventListener("click", () => {
                 if (first == null) {
                     first = Number(screen.textContent)
 
-                    console.log(first);
-                    ans.innerHTML = first
+                 
                 }
 
 
@@ -171,7 +170,7 @@ minus.addEventListener("click", () => {
                     ans.innerHTML = first
                     first += Number(screen.textContent);
 
-                    console.log(first);
+                  
                 }
             }
         }
@@ -179,14 +178,12 @@ minus.addEventListener("click", () => {
             if (operator == "*") {
                 if (first == null) {
                     first = Number(screen.textContent)
-                    screen.innerHTML = "";
-                    console.log(first);
+                    
                 }
 
                 else if (first != null) {
                     first *= Number(screen.textContent);
-                    screen.innerHTML = "";
-                    console.log(first);
+                
                 }
             }
         }
@@ -195,14 +192,12 @@ minus.addEventListener("click", () => {
             if (operator == "/") {
                 if (first == null) {
                     first = Number(screen.textContent)
-                    screen.innerHTML = "";
-                    console.log(first);
+                
                 }
 
                 else if (first != null) {
                     first /= Number(screen.textContent);
-                    screen.innerHTML = "";
-                    console.log(first);
+                
                 }
             }
         }
@@ -250,14 +245,12 @@ multiply.addEventListener("click", () => {
             if (operator == "+") {
                 if (first == 0) {
                     first = Number(screen.textContent)
-                    screen.innerHTML = "";
-                    console.log(first);
+                   
                 }
 
                 else if (first != 0) {
                     first += Number(screen.textContent);
-                    screen.innerHTML = "";
-                    console.log(first);
+                   
                 }
             }
         }
@@ -266,7 +259,7 @@ multiply.addEventListener("click", () => {
                 if (first == 0) {
                     first = Number(screen.textContent)
 
-                    console.log(first);
+                  
                     ans.innerHTML = first
                 }
 
@@ -277,7 +270,7 @@ multiply.addEventListener("click", () => {
                     ans.innerHTML = first
                     first -= Number(screen.textContent);
 
-                    console.log(first);
+                
                 }
             }
         }
@@ -285,14 +278,14 @@ multiply.addEventListener("click", () => {
             if (operator == "/") {
                 if (first == 0) {
                     first = Number(screen.textContent)
-                    screen.innerHTML = "";
-                    console.log(first);
+                
+                
                 }
 
                 else if (first != 0) {
                     first /= Number(screen.textContent);
-                    screen.innerHTML = "";
-                    console.log(first);
+                    
+                   
                 }
             }
         }
@@ -350,14 +343,12 @@ divide.addEventListener("click", () => {
             if (operator == "*") {
                 if (first == 0) {
                     first = Number(screen.textContent)
-                    screen.innerHTML = "";
-                    console.log(first);
+              
                 }
 
                 else if (first != 0) {
                     first *= Number(screen.textContent);
-                    screen.innerHTML = "";
-                    console.log(first);
+              
                 }
             }
         }
@@ -366,14 +357,12 @@ divide.addEventListener("click", () => {
             if (operator == "-") {
                 if (first == 0) {
                     first = Number(screen.textContent)
-                    screen.innerHTML = "";
-                    console.log(first);
+               
                 }
 
                 else if (first != 0) {
                     first -= Number(screen.textContent);
-                    screen.innerHTML = "";
-                    console.log(first);
+                  
                 }
             }
         }
