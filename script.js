@@ -73,6 +73,7 @@ plus.addEventListener("click", () => {
 
 
                 else if (first != null) {
+                   
                     ans.innerHTML = first
                     first -= Number(screen.textContent);
 
@@ -243,12 +244,12 @@ multiply.addEventListener("click", () => {
 
         if (operator == "+") {
             if (operator == "+") {
-                if (first == 0) {
+                if (first == null) {
                     first = Number(screen.textContent)
                    
                 }
 
-                else if (first != 0) {
+                else if (first != null) {
                     first += Number(screen.textContent);
                    
                 }
@@ -256,7 +257,7 @@ multiply.addEventListener("click", () => {
         }
         if (operator == "-") {
             if (operator == "-") {
-                if (first == 0) {
+                if (first == null) {
                     first = Number(screen.textContent)
 
                   
@@ -266,7 +267,7 @@ multiply.addEventListener("click", () => {
 
 
 
-                else if (first != 0) {
+                else if (first != null) {
                     ans.innerHTML = first
                     first -= Number(screen.textContent);
 
@@ -276,13 +277,13 @@ multiply.addEventListener("click", () => {
         }
         if (operator == "/") {
             if (operator == "/") {
-                if (first == 0) {
+                if (first == null) {
                     first = Number(screen.textContent)
                 
                 
                 }
 
-                else if (first != 0) {
+                else if (first != null) {
                     first /= Number(screen.textContent);
                     
                    
@@ -321,17 +322,14 @@ divide.addEventListener("click", () => {
     function is_operator_selected_before() {
         if (operator == "+") {
             if (operator == "+") {
-                if (first == 0) {
+                if (first == null) {
                     first = Number(screen.textContent)
 
                     console.log(first);
                     ans.innerHTML = first
                 }
 
-
-
-
-                else if (first != 0) {
+                else if (first != null) {
                     ans.innerHTML = first
                     first += Number(screen.textContent);
 
@@ -341,12 +339,12 @@ divide.addEventListener("click", () => {
         }
         if (operator == "*") {
             if (operator == "*") {
-                if (first == 0) {
+                if (first == null) {
                     first = Number(screen.textContent)
               
                 }
 
-                else if (first != 0) {
+                else if (first != null) {
                     first *= Number(screen.textContent);
               
                 }
@@ -355,12 +353,12 @@ divide.addEventListener("click", () => {
 
         if (operator == "-") {
             if (operator == "-") {
-                if (first == 0) {
+                if (first == null) {
                     first = Number(screen.textContent)
                
                 }
 
-                else if (first != 0) {
+                else if (first != null) {
                     first -= Number(screen.textContent);
                   
                 }
