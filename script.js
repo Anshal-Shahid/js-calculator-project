@@ -130,11 +130,10 @@ plus.addEventListener("click", () => {
 
         else if (first != null) {
             ans.innerHTML = first;
-            d = screen.textContent;
-            // console.log(d);
+
             first += Number(screen.textContent);
 
-            // console.log(first);
+ 
         }
         console.log("ans" +first);
     }
@@ -222,13 +221,12 @@ minus.addEventListener("click", () => {
 
 
         else if (first != null) {
-            console.log("two");
+           
             ans.innerHTML = first;
-            d = screen.textContent;
-            // console.log(d);
+          
             first -= Number(screen.textContent);
 
-            console.log(first);
+        
         }
     }
 
@@ -306,14 +304,12 @@ multiply.addEventListener("click", () => {
 
         if (first == null) {
             first = Number(screen.textContent)
-            screen.innerHTML = "";
-            console.log(first);
+            ans.innerHTML = first
         }
 
         else if (first != null) {
+            ans.innerHTML = first;
             first *= Number(screen.textContent);
-            screen.innerHTML = "";
-            console.log(first);
         }
 
     }
@@ -389,15 +385,16 @@ divide.addEventListener("click", () => {
 
 
         if (first == null) {
-            first = Number(screen.textContent)
-            screen.innerHTML = "";
-            console.log(first);
+           first = Number(screen.textContent)
+
+            ans.innerHTML = first
         }
 
         else if (first != null) {
+            ans.innerHTML = first;
+            
+           
             first /= Number(screen.textContent);
-            screen.innerHTML = "";
-            console.log(first);
         }
 
     }
