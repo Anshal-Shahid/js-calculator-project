@@ -24,7 +24,28 @@ let minus = document.querySelector(".minus");
 let clear = document.querySelector(".clear");
 let backspace = document.querySelector(".back");
 
+
+///// dot /////
 let dot = document.querySelector(".dot");
+
+dot.addEventListener("click", () => {
+    if (a == 1) {
+        screen.innerHTML = ""
+        a++
+    }
+    if (a == 0) {
+
+        screen.innerHTML += "."
+    }
+    else if (a > 1) {
+        screen.innerHTML += "."
+
+        a++
+    }
+})
+
+
+
 
 let nums_name = [one, two, three, four, five, six, seven, eight, nine];
 
@@ -37,10 +58,10 @@ let previous_first_value;
 let operator = "";
 let result;
 let a = 0;
-
+let equal_and_none_opertaor_select = null;
 //// for equal count ////
 let equal_count = 0;
-////////////////
+
 
 //////// clear/////////
 clear.addEventListener("click", () => {
@@ -48,6 +69,7 @@ clear.addEventListener("click", () => {
     first = null
     second = null
     result = null
+    previous_first_value = null
 })
 
 
@@ -55,8 +77,8 @@ clear.addEventListener("click", () => {
 //////// plus ////////
 
 plus.addEventListener("click", () => {
-    equal_count=0
-    // if (first != null) {
+    equal_count = 0
+
 
     //// operator checker////
     function is_operator_selected_before() {
@@ -73,7 +95,7 @@ plus.addEventListener("click", () => {
 
 
                 else if (first != null) {
-                   
+
                     ans.innerHTML = first
                     first -= Number(screen.textContent);
 
@@ -134,15 +156,15 @@ plus.addEventListener("click", () => {
 
             first += Number(screen.textContent);
 
- 
+
         }
-        console.log("ans" +first);
+        console.log("ans" + first);
     }
 
 
 
     a = 1
-    
+    equal_and_none_opertaor_select = null;
     operator = "+"
 
     console.log(operator);
@@ -152,7 +174,7 @@ plus.addEventListener("click", () => {
 //////// minus ////////
 
 minus.addEventListener("click", () => {
-    equal_count=0
+    equal_count = 0
 
     //// operator checker////
     function is_operator_selected_before() {
@@ -161,7 +183,7 @@ minus.addEventListener("click", () => {
                 if (first == null) {
                     first = Number(screen.textContent)
 
-                 
+
                 }
 
 
@@ -171,7 +193,7 @@ minus.addEventListener("click", () => {
                     ans.innerHTML = first
                     first += Number(screen.textContent);
 
-                  
+
                 }
             }
         }
@@ -179,12 +201,12 @@ minus.addEventListener("click", () => {
             if (operator == "*") {
                 if (first == null) {
                     first = Number(screen.textContent)
-                    
+
                 }
 
                 else if (first != null) {
                     first *= Number(screen.textContent);
-                
+
                 }
             }
         }
@@ -193,12 +215,12 @@ minus.addEventListener("click", () => {
             if (operator == "/") {
                 if (first == null) {
                     first = Number(screen.textContent)
-                
+
                 }
 
                 else if (first != null) {
                     first /= Number(screen.textContent);
-                
+
                 }
             }
         }
@@ -207,7 +229,7 @@ minus.addEventListener("click", () => {
 
     if (operator == "" || operator == "-") {
 
-        
+
         if (first == null) {
             console.log("one");
             first = Number(screen.textContent)
@@ -217,16 +239,17 @@ minus.addEventListener("click", () => {
 
 
         else if (first != null) {
-           
+
             ans.innerHTML = first;
-          
+
             first -= Number(screen.textContent);
 
-        
+
         }
     }
 
     a = 1
+    equal_and_none_opertaor_select = null;
     operator = "-"
 })
 
@@ -235,7 +258,7 @@ minus.addEventListener("click", () => {
 //////// multiply ////////
 
 multiply.addEventListener("click", () => {
-    equal_count=0
+    equal_count = 0
     console.log(operator);
 
 
@@ -246,12 +269,12 @@ multiply.addEventListener("click", () => {
             if (operator == "+") {
                 if (first == null) {
                     first = Number(screen.textContent)
-                   
+
                 }
 
                 else if (first != null) {
                     first += Number(screen.textContent);
-                   
+
                 }
             }
         }
@@ -260,7 +283,7 @@ multiply.addEventListener("click", () => {
                 if (first == null) {
                     first = Number(screen.textContent)
 
-                  
+
                     ans.innerHTML = first
                 }
 
@@ -271,7 +294,7 @@ multiply.addEventListener("click", () => {
                     ans.innerHTML = first
                     first -= Number(screen.textContent);
 
-                
+
                 }
             }
         }
@@ -279,14 +302,14 @@ multiply.addEventListener("click", () => {
             if (operator == "/") {
                 if (first == null) {
                     first = Number(screen.textContent)
-                
-                
+
+
                 }
 
                 else if (first != null) {
                     first /= Number(screen.textContent);
-                    
-                   
+
+
                 }
             }
         }
@@ -309,6 +332,7 @@ multiply.addEventListener("click", () => {
     }
 
     a = 1
+    equal_and_none_opertaor_select = null;
     operator = "*"
     console.log("right");
 })
@@ -317,7 +341,7 @@ multiply.addEventListener("click", () => {
 //////// divide ////////
 
 divide.addEventListener("click", () => {
-    equal_count=0
+    equal_count = 0
     /// operator checker///
     function is_operator_selected_before() {
         if (operator == "+") {
@@ -341,12 +365,12 @@ divide.addEventListener("click", () => {
             if (operator == "*") {
                 if (first == null) {
                     first = Number(screen.textContent)
-              
+
                 }
 
                 else if (first != null) {
                     first *= Number(screen.textContent);
-              
+
                 }
             }
         }
@@ -355,12 +379,12 @@ divide.addEventListener("click", () => {
             if (operator == "-") {
                 if (first == null) {
                     first = Number(screen.textContent)
-               
+
                 }
 
                 else if (first != null) {
                     first -= Number(screen.textContent);
-                  
+
                 }
             }
         }
@@ -372,15 +396,15 @@ divide.addEventListener("click", () => {
 
 
         if (first == null) {
-           first = Number(screen.textContent)
+            first = Number(screen.textContent)
 
             ans.innerHTML = first
         }
 
         else if (first != null) {
             ans.innerHTML = first;
-            
-           
+
+
             first /= Number(screen.textContent);
         }
 
@@ -388,6 +412,7 @@ divide.addEventListener("click", () => {
 
 
     a = 1
+    equal_and_none_opertaor_select = null;
     operator = "/"
 })
 
@@ -396,19 +421,20 @@ divide.addEventListener("click", () => {
 
 
 equal.addEventListener("click", () => {
+    equal_and_none_opertaor_select = 0;
     console.log(operator);
     // if (first != null) {
 
     if (!screen.textContent == "") {
         if (equal_count == 0) {
-            console.log("hiiii");
+
             first = Number(first)
-            
-            
+
+
             second = screen.textContent;
             second = Number(second);
-            console.log("first"+first);
-            console.log("second"+second);
+            console.log("first" + first);
+            console.log("second" + second);
 
             screen.innerHTML = "";
 
@@ -449,57 +475,57 @@ equal.addEventListener("click", () => {
                 screen.innerHTML = result
             }
 
-            previous_first_value=second
+            previous_first_value = second
         }
 
         /// if equal to is press more than one time before slecting an other value////
         else if (equal_count >= 1) {
-      
-        
-            second=previous_first_value
+
+
+            second = previous_first_value
             first = Number(screen.textContent)
-            
-            
+
+
             // current_value = screen.textContent;
             // second = Number(second);
-            
+
             screen.innerHTML = "";
-            
-            
+
+
             if (operator == "+") {
-                
+
                 result = Number(first + second);
                 console.log(result);
                 console.log("helo");
             }
-            
+
             if (operator == "-") {
                 console.log(typeof first);
                 result = Number(first - second);
                 console.log("minus");
             }
-            
+
             if (operator == "*") {
                 console.log("multiply");
                 result = Number(first * second);
                 console.log(result);
             }
-            
+
             if (operator == "/") {
                 result = Number(first / second);
-                
+
             }
             console.log(result);
-            screen.innerHTML=result
+            screen.innerHTML = result
         }
 
     }
-    
+
     equal_count++
-    
+
     // }
     first = null
-    
+
 })
 
 
@@ -507,23 +533,42 @@ equal.addEventListener("click", () => {
 ////  Numbers ////
 
 zero.addEventListener("click", () => {
-    // if (result != null) {
-    //     screen.innerHTML = ""
-    // }
-
-
-    //// if any operator is clicked then clear screen /////////
-    if (operator == null) {
-        screen.innerHTML = "";
+    if (equal_and_none_opertaor_select == 0) {
+        screen.innerHTML = ""
+        b = null
+        first = null
+        second = null
+        result = null
+        previous_first_value = null
 
     }
-    screen.innerHTML += "0"
+
+    //// if any operator is clicked then clear screen /////////
+    if (a == 1) {
+        screen.innerHTML = ""
+        a++
+    }
+    if (a == 0) {
+
+        screen.innerHTML += "0"
+    }
+    else if (a > 1) {
+        screen.innerHTML += "0"
+
+        a++
+    }
 })
 one.addEventListener("click", () => {
-    // if (result != null) {
-    //     screen.innerHTML = ""
-    // }
 
+    if (equal_and_none_opertaor_select == 0) {
+        screen.innerHTML = ""
+        b = null
+        first = null
+        second = null
+        result = null
+        previous_first_value = null
+
+    }
 
 
     //// if any operator is clicked then clear screen /////////
@@ -542,8 +587,18 @@ one.addEventListener("click", () => {
     }
 })
 two.addEventListener("click", () => {
-    if (result != null) {
+    // if (result != null) {
+    //     screen.innerHTML = ""
+    // }
+
+    if (equal_and_none_opertaor_select == 0) {
         screen.innerHTML = ""
+        b = null
+        first = null
+        second = null
+        result = null
+        previous_first_value = null
+
     }
 
     //// if any operator is clicked then clear screen /////////
@@ -562,9 +617,15 @@ two.addEventListener("click", () => {
     }
 })
 three.addEventListener("click", () => {
-    // if (result != null) {
-    //     screen.innerHTML = ""
-    // }
+    if (equal_and_none_opertaor_select == 0) {
+        screen.innerHTML = ""
+        b = null
+        first = null
+        second = null
+        result = null
+        previous_first_value = null
+
+    }
 
 
     //// if any operator is clicked then clear screen /////////
@@ -583,10 +644,15 @@ three.addEventListener("click", () => {
     }
 })
 four.addEventListener("click", () => {
-    // if (result != null) {
-    //     screen.innerHTML = ""
-    // }
+    if (equal_and_none_opertaor_select == 0) {
+        screen.innerHTML = ""
+        b = null
+        first = null
+        second = null
+        result = null
+        previous_first_value = null
 
+    }
     //// if any operator is clicked then clear screen /////////
     if (a == 1) {
         screen.innerHTML = ""
@@ -603,9 +669,15 @@ four.addEventListener("click", () => {
     }
 })
 five.addEventListener("click", () => {
-    // if (result != null) {
-    //     screen.innerHTML = ""
-    // }
+    if (equal_and_none_opertaor_select == 0) {
+        screen.innerHTML = ""
+        b = null
+        first = null
+        second = null
+        result = null
+        previous_first_value = null
+
+    }
 
     //// if any operator is clicked then clear screen /////////
     if (a == 1) {
@@ -623,9 +695,15 @@ five.addEventListener("click", () => {
     }
 })
 six.addEventListener("click", () => {
-    // if (result != null) {
-    //     screen.innerHTML = ""
-    // }
+    if (equal_and_none_opertaor_select == 0) {
+        screen.innerHTML = ""
+        b = null
+        first = null
+        second = null
+        result = null
+        previous_first_value = null
+
+    }
 
     //// if any operator is clicked then clear screen /////////
     if (a == 1) {
@@ -643,10 +721,15 @@ six.addEventListener("click", () => {
     }
 })
 seven.addEventListener("click", () => {
-    // if (result != null) {
-    //     screen.innerHTML = ""
-    // }
+    if (equal_and_none_opertaor_select == 0) {
+        screen.innerHTML = ""
+        b = null
+        first = null
+        second = null
+        result = null
+        previous_first_value = null
 
+    }
 
     //// if any operator is clicked then clear screen /////////
     if (a == 1) {
@@ -664,9 +747,15 @@ seven.addEventListener("click", () => {
     }
 })
 eight.addEventListener("click", () => {
-    // if (result != null) {
-    //     screen.innerHTML = ""
-    // }
+    if (equal_and_none_opertaor_select == 0) {
+        screen.innerHTML = ""
+        b = null
+        first = null
+        second = null
+        result = null
+        previous_first_value = null
+
+    }
 
     //// if any operator is clicked then clear screen /////////
     if (a == 1) {
@@ -684,10 +773,15 @@ eight.addEventListener("click", () => {
     }
 })
 nine.addEventListener("click", () => {
-    // if (result != null) {
-    //     screen.innerHTML = ""
-    // }
+    if (equal_and_none_opertaor_select == 0) {
+        screen.innerHTML = ""
+        b = null
+        first = null
+        second = null
+        result = null
+        previous_first_value = null
 
+    }
     //// if any operator is clicked then clear screen /////////
     if (a == 1) {
         screen.innerHTML = ""
