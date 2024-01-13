@@ -106,7 +106,7 @@ plus.addEventListener("click", () => {
         }
 
 
-          
+
 
 
         //// operator checker////
@@ -160,10 +160,10 @@ plus.addEventListener("click", () => {
                 }
             }
         }
-        
-        
+
+
         is_operator_selected_before()
-       
+
 
         if (operator == "" || operator == "+") {
 
@@ -277,6 +277,34 @@ minus.addEventListener("click", () => {
         a = 1
         equal_and_none_opertaor_select = null;
         operator = "-"
+    }
+
+    if (screen.textContent == "") {
+        if (equal_and_none_opertaor_select == 0) {
+            screen.innerHTML = ""
+            b = null
+            first = null
+            second = null
+            result = null
+            previous_first_value = null
+            equal_and_none_opertaor_select = null
+
+        }
+
+        //// if any operator is clicked then clear screen /////////
+        if (a == 1) {
+            screen.innerHTML = ""
+            a++
+        }
+        if (a == 0) {
+
+            screen.innerHTML += "-"
+        }
+        else if (a > 1) {
+            screen.innerHTML += "-"
+
+            a++
+        }
     }
 })
 
@@ -474,112 +502,112 @@ divide.addEventListener("click", () => {
 equal.addEventListener("click", () => {
     equal_and_none_opertaor_select = 0;
 
-    if(first!=null){
-    if (!screen.textContent == "") {
-        if (equal_count == 0) {
+    if (first != null) {
+        if (!screen.textContent == "") {
+            if (equal_count == 0) {
 
-            first = Number(first)
+                first = Number(first)
 
-            second = screen.textContent;
-            second = Number(second);
-
-
-            screen.innerHTML = "";
+                second = screen.textContent;
+                second = Number(second);
 
 
-            if (operator == "+") {
+                screen.innerHTML = "";
 
-                result = Number(first + second);
 
+                if (operator == "+") {
+
+                    result = Number(first + second);
+
+                }
+
+                if (operator == "-") {
+
+                    result = Number(first - second);
+
+                }
+
+                if (operator == "*") {
+
+                    result = Number(first * second);
+
+                }
+
+                if (operator == "/") {
+
+                    result = Number(first / second);
+
+                }
+
+                let confirm = String(result)
+
+                let ind;
+                if (confirm.includes(".")) {
+                    ind = confirm.indexOf(".")
+                    confirm = confirm.slice(0, ind + 3)
+                    screen.innerHTML = confirm
+                }
+                else {
+                    screen.innerHTML = result
+                }
+
+                previous_first_value = second
             }
 
-            if (operator == "-") {
+            /// if equal to is press more than one time before slecting an other value////
+            else if (equal_count >= 1) {
 
-                result = Number(first - second);
 
+                second = previous_first_value
+                first = Number(screen.textContent)
+
+
+                // current_value = screen.textContent;
+                // second = Number(second);
+
+                screen.innerHTML = "";
+
+
+                if (operator == "+") {
+
+                    result = Number(first + second);
+
+                }
+
+                if (operator == "-") {
+
+                    result = Number(first - second);
+
+                }
+
+                if (operator == "*") {
+
+                    result = Number(first * second);
+
+                }
+
+                if (operator == "/") {
+                    result = Number(first / second);
+
+                }
+
+                let confirm = String(result)
+
+                let ind;
+                if (confirm.includes(".")) {
+                    ind = confirm.indexOf(".")
+                    confirm = confirm.slice(0, ind + 3)
+                    screen.innerHTML = confirm
+                }
+                else {
+                    screen.innerHTML = result
+                }
+
+                // screen.innerHTML = result
             }
 
-            if (operator == "*") {
-
-                result = Number(first * second);
-       
-            }
-
-            if (operator == "/") {
-
-                result = Number(first / second);
-
-            }
-
-            let confirm = String(result)
-
-            let ind;
-            if (confirm.includes(".")) {
-                ind = confirm.indexOf(".")
-                confirm = confirm.slice(0, ind + 3)
-                screen.innerHTML = confirm
-            }
-            else {
-                screen.innerHTML = result
-            }
-
-            previous_first_value = second
         }
-
-        /// if equal to is press more than one time before slecting an other value////
-        else if (equal_count >= 1) {
-
-
-            second = previous_first_value
-            first = Number(screen.textContent)
-
-
-            // current_value = screen.textContent;
-            // second = Number(second);
-
-            screen.innerHTML = "";
-
-
-            if (operator == "+") {
-
-                result = Number(first + second);
-
-            }
-
-            if (operator == "-") {
-
-                result = Number(first - second);
-
-            }
-
-            if (operator == "*") {
-
-                result = Number(first * second);
-
-            }
-
-            if (operator == "/") {
-                result = Number(first / second);
-
-            }
-
-            let confirm = String(result)
-
-            let ind;
-            if (confirm.includes(".")) {
-                ind = confirm.indexOf(".")
-                confirm = confirm.slice(0, ind + 3)
-                screen.innerHTML = confirm
-            }
-            else {
-                screen.innerHTML = result
-            }
-
-            // screen.innerHTML = result
-        }
-
     }
- }
 
     equal_count++
 
@@ -676,9 +704,7 @@ one.addEventListener("click", () => {
     }
 })
 two.addEventListener("click", () => {
-    // if (result != null) {
-    //     screen.innerHTML = ""
-    // }
+
 
     if (equal_and_none_opertaor_select == 0) {
         screen.innerHTML = ""
