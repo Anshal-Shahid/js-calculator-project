@@ -55,6 +55,29 @@ clear.addEventListener("click", () => {
     second = null
     result = null
     previous_first_value = null
+    operator = ""
+
+    // operator box//
+
+    op1_reverse()
+
+
+    op2_reverse()
+
+
+    op3_reverse()
+
+
+    op4_reverse()
+
+})
+
+
+//// backspace ////
+backspace.addEventListener("click", () => {
+    let value = screen.textContent;
+    value = value.slice(0, -1)
+    screen.innerHTML = value
 })
 
 
@@ -62,180 +85,199 @@ clear.addEventListener("click", () => {
 //////// plus ////////
 
 plus.addEventListener("click", () => {
-    equal_count = 0
 
-
-    //// operator checker////
-    function is_operator_selected_before() {
-        if (operator == "-") {
-            if (operator == "-") {
-                if (first == null) {
-                    first = Number(screen.textContent)
-
-                    console.log(first);
-                 
-                }
-
-
-
-
-                else if (first != null) {
-
-                   
-                    first -= Number(screen.textContent);
-
-                    console.log(first);
-                }
-            }
+    if (screen.textContent != "") {
+        equal_count = 0
+        if (operator != "+") {
+            console.log("zdbfhzsi");
+            op1();
         }
-        if (operator == "*") {
-            if (operator == "*") {
-                if (first == null) {
-                    first = Number(screen.textContent)
-                    screen.innerHTML = "";
-                    console.log(first);
-                }
 
-                else if (first != null) {
-                    first *= Number(screen.textContent);
-                    screen.innerHTML = "";
-                    console.log(first);
-                }
-            }
+        if (operator == "-") {
+            op2_reverse()
+        }
+
+        if (operator == "*") {
+            op3_reverse()
         }
 
         if (operator == "/") {
-            if (operator == "/") {
-                if (first == null) {
-                    first = Number(screen.textContent)
-                    screen.innerHTML = "";
-                    console.log(first);
-                }
+            op4_reverse()
+        }
 
-                else if (first != null) {
-                    first /= Number(screen.textContent);
-                    screen.innerHTML = "";
-                    console.log(first);
+
+          
+
+
+        //// operator checker////
+        function is_operator_selected_before() {
+            if (operator == "-") {
+                if (operator == "-") {
+                    if (first == null) {
+                        first = Number(screen.textContent)
+
+                    }
+
+
+                    else if (first != null) {
+
+
+                        first -= Number(screen.textContent);
+
+
+                    }
+                }
+            }
+            if (operator == "*") {
+                if (operator == "*") {
+                    if (first == null) {
+                        first = Number(screen.textContent)
+
+
+                    }
+
+                    else if (first != null) {
+                        first *= Number(screen.textContent);
+
+
+                    }
+                }
+            }
+
+            if (operator == "/") {
+                if (operator == "/") {
+                    if (first == null) {
+                        first = Number(screen.textContent)
+
+
+                    }
+
+                    else if (first != null) {
+                        first /= Number(screen.textContent);
+
+
+                    }
                 }
             }
         }
-    }
-    is_operator_selected_before()
-
-
-
-    if (operator == "" || operator == "+") {
-
-        console.log("clicked");
-        if (first == null) {
-            first = Number(screen.textContent)
-
-            // console.log(first);
-
+        
+        
+        is_operator_selected_before()
        
+
+        if (operator == "" || operator == "+") {
+
+            if (first == null) {
+                first = Number(screen.textContent)
+
+            }
+
+
+            else if (first != null) {
+                first += Number(screen.textContent);
+
+            }
+
         }
 
 
-        else if (first != null) {
-           
 
-            first += Number(screen.textContent);
+        a = 1
+        equal_and_none_opertaor_select = null;
+        operator = "+"
 
-
-        }
-      
     }
-
-
-
-    a = 1
-    equal_and_none_opertaor_select = null;
-    operator = "+"
-
-    console.log(operator);
 })
 
 
 //////// minus ////////
 
 minus.addEventListener("click", () => {
-    equal_count = 0
-
-    //// operator checker////
-    function is_operator_selected_before() {
-        if (operator == "+") {
-            if (operator == "+") {
-                if (first == null) {
-                    first = Number(screen.textContent)
-
-
-                }
-
-
-
-
-                else if (first != null) {
-                    
-                    first += Number(screen.textContent);
-
-
-                }
-            }
+    if (screen.textContent != "") {
+        equal_count = 0
+        if (operator != "-") {
+            op2();
         }
+
+        if (operator == "+") {
+            op1_reverse()
+        }
+
         if (operator == "*") {
-            if (operator == "*") {
-                if (first == null) {
-                    first = Number(screen.textContent)
-
-                }
-
-                else if (first != null) {
-                    first *= Number(screen.textContent);
-
-                }
-            }
+            op3_reverse()
         }
 
         if (operator == "/") {
-            if (operator == "/") {
-                if (first == null) {
-                    first = Number(screen.textContent)
+            op4_reverse()
+        }
 
+
+
+
+        //// operator checker////
+        function is_operator_selected_before() {
+            if (operator == "+") {
+                if (operator == "+") {
+                    if (first == null) {
+                        first = Number(screen.textContent)
+
+
+                    }
+
+                    else if (first != null) {
+
+                        first += Number(screen.textContent);
+
+
+                    }
                 }
+            }
+            if (operator == "*") {
+                if (operator == "*") {
+                    if (first == null) {
+                        first = Number(screen.textContent)
 
-                else if (first != null) {
-                    first /= Number(screen.textContent);
+                    }
 
+                    else if (first != null) {
+                        first *= Number(screen.textContent);
+
+                    }
+                }
+            }
+
+            if (operator == "/") {
+                if (operator == "/") {
+                    if (first == null) {
+                        first = Number(screen.textContent)
+
+                    }
+
+                    else if (first != null) {
+                        first /= Number(screen.textContent);
+
+                    }
                 }
             }
         }
-    }
-    is_operator_selected_before()
+        is_operator_selected_before()
 
-    if (operator == "" || operator == "-") {
-
-
-        if (first == null) {
-            console.log("one");
-            first = Number(screen.textContent)
+        if (operator == "" || operator == "-") {
 
 
+            if (first == null) {
+                first = Number(screen.textContent)
+            }
+
+            else if (first != null) {
+                first -= Number(screen.textContent);
+            }
         }
 
-
-        else if (first != null) {
-
-           
-
-            first -= Number(screen.textContent);
-
-
-        }
+        a = 1
+        equal_and_none_opertaor_select = null;
+        operator = "-"
     }
-
-    a = 1
-    equal_and_none_opertaor_select = null;
-    operator = "-"
 })
 
 
@@ -243,183 +285,204 @@ minus.addEventListener("click", () => {
 //////// multiply ////////
 
 multiply.addEventListener("click", () => {
-    equal_count = 0
-    console.log(operator);
+    if (screen.textContent != "") {
+        equal_count = 0
 
-
-    //// operator checker////
-    function is_operator_selected_before() {
+        if (operator != "*") {
+            op3();
+        }
 
         if (operator == "+") {
-            if (operator == "+") {
-                if (first == null) {
-                    first = Number(screen.textContent)
-
-                }
-
-                else if (first != null) {
-                    first += Number(screen.textContent);
-
-                }
-            }
+            op1_reverse()
         }
+
         if (operator == "-") {
-            if (operator == "-") {
-                if (first == null) {
-                    first = Number(screen.textContent)
-
-
-                   
-                }
-
-
-
-
-                else if (first != null) {
-                   
-                    first -= Number(screen.textContent);
-
-
-                }
-            }
+            op2_reverse()
         }
+
         if (operator == "/") {
-            if (operator == "/") {
-                if (first == null) {
-                    first = Number(screen.textContent)
+            op4_reverse()
+        }
 
 
+        //// operator checker////
+        function is_operator_selected_before() {
+
+            if (operator == "+") {
+                if (operator == "+") {
+                    if (first == null) {
+                        first = Number(screen.textContent)
+
+                    }
+
+                    else if (first != null) {
+                        first += Number(screen.textContent);
+
+                    }
                 }
+            }
+            if (operator == "-") {
+                if (operator == "-") {
+                    if (first == null) {
+                        first = Number(screen.textContent)
 
-                else if (first != null) {
-                    first /= Number(screen.textContent);
 
 
+                    }
+
+
+
+
+                    else if (first != null) {
+
+                        first -= Number(screen.textContent);
+
+
+                    }
+                }
+            }
+            if (operator == "/") {
+                if (operator == "/") {
+                    if (first == null) {
+                        first = Number(screen.textContent)
+
+
+                    }
+
+                    else if (first != null) {
+                        first /= Number(screen.textContent);
+
+
+                    }
                 }
             }
         }
-    }
-    is_operator_selected_before()
+        is_operator_selected_before()
 
 
-    if (operator == "" || operator == "*") {
+        if (operator == "" || operator == "*") {
 
-        if (first == null) {
-            first = Number(screen.textContent)
-        
+            if (first == null) {
+                first = Number(screen.textContent)
+
+            }
+
+            else if (first != null) {
+                ;
+                first *= Number(screen.textContent);
+            }
+
         }
 
-        else if (first != null) {
-        ;
-            first *= Number(screen.textContent);
-        }
-
+        a = 1
+        equal_and_none_opertaor_select = null;
+        operator = "*"
     }
-
-    a = 1
-    equal_and_none_opertaor_select = null;
-    operator = "*"
-    console.log("right");
 })
 
 
 //////// divide ////////
 
 divide.addEventListener("click", () => {
-    equal_count = 0
-    /// operator checker///
-    function is_operator_selected_before() {
+    if (screen.textContent != "") {
+        equal_count = 0
+
+        if (operator != "/") {
+            op4();
+        }
+
+
         if (operator == "+") {
-            if (operator == "+") {
-                if (first == null) {
-                    first = Number(screen.textContent)
-
-                    console.log(first);
-                
-                }
-
-                else if (first != null) {
-                
-                    first += Number(screen.textContent);
-
-                    console.log(first);
-                }
-            }
+            op1_reverse();
         }
-        if (operator == "*") {
-            if (operator == "*") {
-                if (first == null) {
-                    first = Number(screen.textContent)
-
-                }
-
-                else if (first != null) {
-                    first *= Number(screen.textContent);
-
-                }
-            }
-        }
-
         if (operator == "-") {
-            if (operator == "-") {
-                if (first == null) {
-                    first = Number(screen.textContent)
+            op2_reverse()
+        }
 
+        if (operator == "*") {
+            op3_reverse()
+        }
+
+
+        /// operator checker///
+        function is_operator_selected_before() {
+            if (operator == "+") {
+                if (operator == "+") {
+                    if (first == null) {
+                        first = Number(screen.textContent);
+                    }
+
+                    else if (first != null) {
+                        first += Number(screen.textContent);
+
+                    }
                 }
+            }
+            if (operator == "*") {
+                if (operator == "*") {
+                    if (first == null) {
+                        first = Number(screen.textContent)
 
-                else if (first != null) {
-                    first -= Number(screen.textContent);
+                    }
 
+                    else if (first != null) {
+                        first *= Number(screen.textContent);
+
+                    }
+                }
+            }
+
+            if (operator == "-") {
+                if (operator == "-") {
+                    if (first == null) {
+                        first = Number(screen.textContent)
+
+                    }
+
+                    else if (first != null) {
+                        first -= Number(screen.textContent);
+
+                    }
                 }
             }
         }
-    }
-    is_operator_selected_before()
+        is_operator_selected_before()
 
 
-    if (operator == "" || operator == "/") {
+        if (operator == "" || operator == "/") {
 
 
-        if (first == null) {
-            first = Number(screen.textContent)
+            if (first == null) {
+                first = Number(screen.textContent)
+            }
 
-        
+            else if (first != null) {
+                first /= Number(screen.textContent);
+            }
+
         }
 
-        else if (first != null) {
-        ;
 
-
-            first /= Number(screen.textContent);
-        }
-
+        a = 1
+        equal_and_none_opertaor_select = null;
+        operator = "/";
     }
-
-
-    a = 1
-    equal_and_none_opertaor_select = null;
-    operator = "/"
 })
-
-
 
 
 
 equal.addEventListener("click", () => {
     equal_and_none_opertaor_select = 0;
-    console.log(operator);
-    // if (first != null) {
 
+    if(first!=null){
     if (!screen.textContent == "") {
         if (equal_count == 0) {
 
             first = Number(first)
 
-
             second = screen.textContent;
             second = Number(second);
-            console.log("first" + first);
-            console.log("second" + second);
+
 
             screen.innerHTML = "";
 
@@ -427,27 +490,27 @@ equal.addEventListener("click", () => {
             if (operator == "+") {
 
                 result = Number(first + second);
-                console.log("plus");
+
             }
 
             if (operator == "-") {
-                console.log(typeof first);
+
                 result = Number(first - second);
-                console.log("minus");
+
             }
 
             if (operator == "*") {
-                console.log("multiply");
+
                 result = Number(first * second);
-                console.log(result);
+       
             }
 
             if (operator == "/") {
+
                 result = Number(first / second);
 
             }
-            // result = Number(result)
-            // console.log(typeof result);
+
             let confirm = String(result)
 
             let ind;
@@ -480,35 +543,46 @@ equal.addEventListener("click", () => {
             if (operator == "+") {
 
                 result = Number(first + second);
-                console.log(result);
-                console.log("helo");
+
             }
 
             if (operator == "-") {
-                console.log(typeof first);
+
                 result = Number(first - second);
-                console.log("minus");
+
             }
 
             if (operator == "*") {
-                console.log("multiply");
+
                 result = Number(first * second);
-                console.log(result);
+
             }
 
             if (operator == "/") {
                 result = Number(first / second);
 
             }
-            console.log(result);
-            screen.innerHTML = result
+
+            let confirm = String(result)
+
+            let ind;
+            if (confirm.includes(".")) {
+                ind = confirm.indexOf(".")
+                confirm = confirm.slice(0, ind + 3)
+                screen.innerHTML = confirm
+            }
+            else {
+                screen.innerHTML = result
+            }
+
+            // screen.innerHTML = result
         }
 
     }
+ }
 
     equal_count++
 
-    // }
     first = null
 
 })
@@ -518,7 +592,7 @@ equal.addEventListener("click", () => {
 ////  Numbers ////
 
 dot.addEventListener("click", () => {
-    
+
     if (equal_and_none_opertaor_select == 0) {
         screen.innerHTML = ""
         b = null
@@ -526,7 +600,7 @@ dot.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-        equal_and_none_opertaor_select=null
+        equal_and_none_opertaor_select = null
 
     }
 
@@ -554,10 +628,11 @@ zero.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-        equal_and_none_opertaor_select=null
+        equal_and_none_opertaor_select = null
     }
 
     //// if any operator is clicked then clear screen /////////
+
     if (a == 1) {
         screen.innerHTML = ""
         a++
@@ -581,7 +656,7 @@ one.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-        equal_and_none_opertaor_select=null
+        equal_and_none_opertaor_select = null
     }
 
 
@@ -612,7 +687,7 @@ two.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-        equal_and_none_opertaor_select=null
+        equal_and_none_opertaor_select = null
 
     }
 
@@ -639,7 +714,7 @@ three.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-        equal_and_none_opertaor_select=null
+        equal_and_none_opertaor_select = null
 
     }
 
@@ -667,7 +742,7 @@ four.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-        equal_and_none_opertaor_select=null
+        equal_and_none_opertaor_select = null
 
     }
     //// if any operator is clicked then clear screen /////////
@@ -693,7 +768,7 @@ five.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-        equal_and_none_opertaor_select=null
+        equal_and_none_opertaor_select = null
     }
 
     //// if any operator is clicked then clear screen /////////
@@ -719,7 +794,7 @@ six.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-        equal_and_none_opertaor_select=null
+        equal_and_none_opertaor_select = null
     }
 
     //// if any operator is clicked then clear screen /////////
@@ -745,7 +820,7 @@ seven.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-        equal_and_none_opertaor_select=null
+        equal_and_none_opertaor_select = null
     }
 
     //// if any operator is clicked then clear screen /////////
@@ -771,7 +846,7 @@ eight.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-        equal_and_none_opertaor_select=null
+        equal_and_none_opertaor_select = null
     }
 
     //// if any operator is clicked then clear screen /////////
@@ -797,7 +872,7 @@ nine.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-        equal_and_none_opertaor_select=null
+        equal_and_none_opertaor_select = null
     }
     //// if any operator is clicked then clear screen /////////
     if (a == 1) {
@@ -814,3 +889,75 @@ nine.addEventListener("click", () => {
         a++
     }
 })
+
+
+
+
+
+
+
+
+
+
+function op1() {
+    gsap.to(".op1", {
+        x: -82,
+        ease: "elastic.out",
+        duration: .6
+    })
+}
+function op2() {
+    gsap.to(".op2", {
+        x: -82,
+        ease: "elastic.out",
+        duration: .6
+    })
+}
+function op3() {
+    gsap.to(".op3", {
+        x: -82,
+        ease: "elastic.out",
+        duration: .6
+    })
+}
+function op4() {
+    gsap.to(".op4", {
+        x: -82,
+        ease: "elastic.out",
+        duration: .6
+    })
+}
+
+
+
+
+// reverse//
+function op1_reverse() {
+    gsap.to(".op1", {
+        x: 0,
+        ease: "elastic.out",
+        duration: .6
+    })
+}
+function op2_reverse() {
+    gsap.to(".op2", {
+        x: 0,
+        ease: "elastic.out",
+        duration: .6
+    })
+}
+function op3_reverse() {
+    gsap.to(".op3", {
+        x: 0,
+        ease: "elastic.out",
+        duration: .6
+    })
+}
+function op4_reverse() {
+    gsap.to(".op4", {
+        x: 0,
+        ease: "elastic.out",
+        duration: .6
+    })
+}
+
