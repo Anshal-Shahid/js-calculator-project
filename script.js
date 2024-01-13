@@ -502,7 +502,7 @@ divide.addEventListener("click", () => {
 equal.addEventListener("click", () => {
     equal_and_none_opertaor_select = 0;
 
-    if (first != null) {
+    if (first != null || previous_first_value!=null) {
         if (!screen.textContent == "") {
             if (equal_count == 0) {
 
@@ -987,3 +987,25 @@ function op4_reverse() {
     })
 }
 
+
+let dark_btn = document.querySelector(".button div");
+let input = document.querySelector(".input div");
+let btn = document.querySelectorAll(".btn");
+let special_btn = document.querySelectorAll(".special-btn")
+let body =document.querySelector("main");
+let operators_div=document.querySelectorAll(".operator div")
+
+
+dark_btn.addEventListener("click", () => {
+    special_btn.forEach(element => {
+        element.classList.toggle("dark-special-btn")
+    });
+    btn.forEach(element => {
+        element.classList.toggle("dark-btn")
+    });
+    body.classList.toggle("body")
+    input.classList.toggle("dark-input-div")
+    operators_div.forEach(element=>{
+        element.classList.toggle("dark-operator")
+    })
+})
