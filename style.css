@@ -6,11 +6,10 @@
 
 body ,html{
     width: 100%;
-    background-color: floralwhite;
-}
 
+}
 main{
-    background-color: floralwhite;
+    background-color: #eeeeee;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,13 +20,13 @@ main{
 
 .wrapper{
     width: 34vw ;
-    background-color: aqua;
+   
     flex-direction: column;
     display: flex;
     align-items: center;
     /* justify-content: center; */
     /* position: relative; */
-
+    
 }
 .calculator{
     gap: .4vw;
@@ -36,8 +35,11 @@ main{
     flex-direction: column;
     /* position: relative; */
     width: 34vw;
-    /* background-color: aquamarine; */
+    background-color: rgb(172, 168, 168,.8);
+   border-radius: .6vw;
+   box-shadow: 5px 5px 6px rgb(125, 125, 125);
     position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .input{
     /* background-color: brown; */
@@ -47,7 +49,7 @@ main{
 }
 
 .input{
-overflow:clip;
+    overflow:clip;
 }
 
 .input div{
@@ -74,14 +76,14 @@ overflow:clip;
 .row div{
     width: 25%;
     height: 8vw;
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2.2rem;
     border-radius: .4vw;
-
-
+    
+    
 }
 .row-4 div{
     width: calc(25% - .31vw);
@@ -94,7 +96,7 @@ overflow:clip;
     right: 0;
     height: 16.4vw;
     width: 8.2vw;
-
+    
 }
 .row-5 :nth-child(1){
     width: calc(50% - .24vw);
@@ -102,10 +104,28 @@ overflow:clip;
 .row-5 :nth-child(2){
     width: calc(25% - .24vw);
 }
+.zero{
+    width: 100%;
+  
+}
+/* btn customization */
 
 
 
+.btn{
+    background-color: #d4d4d2;
+}
+.btn:active{
+    opacity: .8;
+}
+.special-btn{
+    background-color: #ff9500;
+}
+
+.btn{
+    filter:  brightness(99%);
+}
 
 
-
-
+/* dark mode */
+/* rgb(131, 245, 183)  */

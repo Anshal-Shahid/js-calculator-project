@@ -2,7 +2,7 @@ let screen = document.querySelector(".input p");
 
 let equal = document.querySelector(".equal");
 
-let ans = document.querySelector(".ans p");
+// let ans = document.querySelector(".ans p");
 
 let zero = document.querySelector(".zero");
 let one = document.querySelector(".one");
@@ -28,21 +28,6 @@ let backspace = document.querySelector(".back");
 ///// dot /////
 let dot = document.querySelector(".dot");
 
-dot.addEventListener("click", () => {
-    if (a == 1) {
-        screen.innerHTML = ""
-        a++
-    }
-    if (a == 0) {
-
-        screen.innerHTML += "."
-    }
-    else if (a > 1) {
-        screen.innerHTML += "."
-
-        a++
-    }
-})
 
 
 
@@ -88,7 +73,7 @@ plus.addEventListener("click", () => {
                     first = Number(screen.textContent)
 
                     console.log(first);
-                    ans.innerHTML = first
+                 
                 }
 
 
@@ -96,7 +81,7 @@ plus.addEventListener("click", () => {
 
                 else if (first != null) {
 
-                    ans.innerHTML = first
+                   
                     first -= Number(screen.textContent);
 
                     console.log(first);
@@ -147,18 +132,18 @@ plus.addEventListener("click", () => {
 
             // console.log(first);
 
-            ans.innerHTML = first
+       
         }
 
 
         else if (first != null) {
-            ans.innerHTML = first;
+           
 
             first += Number(screen.textContent);
 
 
         }
-        console.log("ans" + first);
+      
     }
 
 
@@ -190,7 +175,7 @@ minus.addEventListener("click", () => {
 
 
                 else if (first != null) {
-                    ans.innerHTML = first
+                    
                     first += Number(screen.textContent);
 
 
@@ -234,13 +219,13 @@ minus.addEventListener("click", () => {
             console.log("one");
             first = Number(screen.textContent)
 
-            ans.innerHTML = first
+
         }
 
 
         else if (first != null) {
 
-            ans.innerHTML = first;
+           
 
             first -= Number(screen.textContent);
 
@@ -284,14 +269,14 @@ multiply.addEventListener("click", () => {
                     first = Number(screen.textContent)
 
 
-                    ans.innerHTML = first
+                   
                 }
 
 
 
 
                 else if (first != null) {
-                    ans.innerHTML = first
+                   
                     first -= Number(screen.textContent);
 
 
@@ -321,11 +306,11 @@ multiply.addEventListener("click", () => {
 
         if (first == null) {
             first = Number(screen.textContent)
-            ans.innerHTML = first
+        
         }
 
         else if (first != null) {
-            ans.innerHTML = first;
+        ;
             first *= Number(screen.textContent);
         }
 
@@ -350,11 +335,11 @@ divide.addEventListener("click", () => {
                     first = Number(screen.textContent)
 
                     console.log(first);
-                    ans.innerHTML = first
+                
                 }
 
                 else if (first != null) {
-                    ans.innerHTML = first
+                
                     first += Number(screen.textContent);
 
                     console.log(first);
@@ -398,11 +383,11 @@ divide.addEventListener("click", () => {
         if (first == null) {
             first = Number(screen.textContent)
 
-            ans.innerHTML = first
+        
         }
 
         else if (first != null) {
-            ans.innerHTML = first;
+        ;
 
 
             first /= Number(screen.textContent);
@@ -532,6 +517,35 @@ equal.addEventListener("click", () => {
 
 ////  Numbers ////
 
+dot.addEventListener("click", () => {
+    
+    if (equal_and_none_opertaor_select == 0) {
+        screen.innerHTML = ""
+        b = null
+        first = null
+        second = null
+        result = null
+        previous_first_value = null
+        equal_and_none_opertaor_select=null
+
+    }
+
+    //// if any operator is clicked then clear screen /////////
+    if (a == 1) {
+        screen.innerHTML = ""
+        a++
+    }
+    if (a == 0) {
+
+        screen.innerHTML += "."
+    }
+    else if (a > 1) {
+        screen.innerHTML += "."
+
+        a++
+    }
+})
+
 zero.addEventListener("click", () => {
     if (equal_and_none_opertaor_select == 0) {
         screen.innerHTML = ""
@@ -540,7 +554,7 @@ zero.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-
+        equal_and_none_opertaor_select=null
     }
 
     //// if any operator is clicked then clear screen /////////
@@ -567,7 +581,7 @@ one.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-
+        equal_and_none_opertaor_select=null
     }
 
 
@@ -598,6 +612,7 @@ two.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
+        equal_and_none_opertaor_select=null
 
     }
 
@@ -624,6 +639,7 @@ three.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
+        equal_and_none_opertaor_select=null
 
     }
 
@@ -651,6 +667,7 @@ four.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
+        equal_and_none_opertaor_select=null
 
     }
     //// if any operator is clicked then clear screen /////////
@@ -676,7 +693,7 @@ five.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-
+        equal_and_none_opertaor_select=null
     }
 
     //// if any operator is clicked then clear screen /////////
@@ -702,7 +719,7 @@ six.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-
+        equal_and_none_opertaor_select=null
     }
 
     //// if any operator is clicked then clear screen /////////
@@ -728,7 +745,7 @@ seven.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-
+        equal_and_none_opertaor_select=null
     }
 
     //// if any operator is clicked then clear screen /////////
@@ -754,7 +771,7 @@ eight.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-
+        equal_and_none_opertaor_select=null
     }
 
     //// if any operator is clicked then clear screen /////////
@@ -780,7 +797,7 @@ nine.addEventListener("click", () => {
         second = null
         result = null
         previous_first_value = null
-
+        equal_and_none_opertaor_select=null
     }
     //// if any operator is clicked then clear screen /////////
     if (a == 1) {
