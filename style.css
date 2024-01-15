@@ -13,6 +13,7 @@ main{
     background-color: #eeeeee;
     display: flex;
     justify-content: center;
+    position: relative;
     align-items: center;
     height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -51,25 +52,28 @@ main{
 }
 
 .input{
-    overflow:clip;
+position: relative;
 }
 
-.input div{
+.input :nth-child(1){
+    position: absolute;
     background-color: black;
     color: rgb(158, 233, 45);
     width: 100%;
     height: 100%;
     border: none;
     display: flex;
+    overflow:clip;
     align-items: center;
     /* justify-content: center ; */
     justify-content: flex-end;
+
   
 
 }
 .input p{
     position: relative;
-    right: 1vw;
+    /* right: 1vw; */
 
     font-size: 3.4rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -136,18 +140,24 @@ main{
 
 
 .operator{
-    margin-top: 30px;
+  
     background-color: beige;
-   position: relative;
-    margin-bottom: 20px;
-    bottom: 82.4vh;
-    right: 15vw;
+position: absolute;
+    
+    /* bottom: 86vh;
+    right: 15vw; */
     
 }
+.operator .div1{
+    display: none;
+}
 .operator div{
+    
     position:absolute;
-    width: 6vw;
-    height: 6.3vw;
+    top: .5vh;
+    width: 6.5vw;
+    margin-left: 2.2vw;
+    height: 9.5vh;
     color: rgb(105, 95, 78);
     font-weight: 600;
     font-size: 2rem;
@@ -156,6 +166,8 @@ main{
     align-items: center;
     box-shadow: -1px 2px 5px grey;
     background-color: rgba(188, 188, 188, 0.8);
+    /* z-index: 999; */
+    z-index: -1;
 }
 
 /* dark mode */
@@ -174,6 +186,7 @@ left:6vw;
     /* color: rgba(131, 245, 182, 0.825) !important; */
     background-color: rgb(159, 203, 179) !important;
     box-shadow: -1px 2px 5px grey !important;
+   
     
 }
 .button div{
@@ -200,5 +213,6 @@ left:6vw;
     background-color: #d4d4d2 !important;
     
     color: rgb(79, 91, 84) !important;
+    width: 100% !important;
   
 }

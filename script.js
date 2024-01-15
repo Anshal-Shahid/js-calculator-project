@@ -927,28 +927,28 @@ nine.addEventListener("click", () => {
 
 function op1() {
     gsap.to(".op1", {
-        x: -82,
+        x: ("-8.1vw"),
         ease: "elastic.out",
         duration: .6
     })
 }
 function op2() {
     gsap.to(".op2", {
-        x: -82,
+        x: ("-8.1vw"),
         ease: "elastic.out",
         duration: .6
     })
 }
 function op3() {
     gsap.to(".op3", {
-        x: -82,
+        x: ("-8.1vw"),
         ease: "elastic.out",
         duration: .6
     })
 }
 function op4() {
     gsap.to(".op4", {
-        x: -82,
+        x: ("-8.1vw"),
         ease: "elastic.out",
         duration: .6
     })
@@ -989,7 +989,7 @@ function op4_reverse() {
 
 
 let dark_btn = document.querySelector(".button div");
-let input = document.querySelector(".input div");
+let input = document.querySelector(".input div :nth-child(1)");
 let btn = document.querySelectorAll(".btn");
 let special_btn = document.querySelectorAll(".special-btn")
 let body =document.querySelector("main");
